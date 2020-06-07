@@ -10,6 +10,7 @@ export default function Dealer(props) {
     "The Empress",
     "The Emperor",
     "The Hierophant",
+    "The Lovers",
     "The Chariot",
     "Strength",
     "The Hermit",
