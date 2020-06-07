@@ -18,8 +18,10 @@ export default function Dealer(props) {
     setFace(Math.floor(Math.random() * 7));
   }
   return (
-    <div>
-      <button onClick={handleClick}>Deal</button>
+    <div className="Dealer">
+      <button type="button" className="btn btn-dark mb-2" onClick={handleClick}>
+        Deal
+      </button>
       <TarotCard card={face} name={cards[face]} />
     </div>
   );
