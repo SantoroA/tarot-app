@@ -16,8 +16,8 @@ export default function TarotCard(props) {
 
   return (
     <div className="TarotCard">
-      <img src={images[`${props.card}.png`]} />
-      <p>{props.name}</p>
+      <img src={images[`${props.card.id}.png`]} />
+      <p>{props.card.name}</p>
     </div>
   );
 }
