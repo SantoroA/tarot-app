@@ -88,6 +88,7 @@ class Dealer extends Component {
         { id: 76, name: "Queen of Pentacles" },
         { id: 77, name: "King of Pentacles" },
       ],
+      dealtCards: [],
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -97,8 +98,12 @@ class Dealer extends Component {
     this.setState((st) => {
       return {
         currCard: newCard,
+        cards: st.cards.filter((x) => x != newCard),
+        dealtCards: [...st.dealtCards, newCard],
       };
     });
+    console.log(this.state.cards);
+    console.log(this.state.dealtCards);
   }
 
   handleClick(e) {
@@ -108,7 +113,7 @@ class Dealer extends Component {
 
   render() {
     return (
-      <div className="Dealer">
+      <div className="Dealer container">
         <button
           type="button"
           className="btn btn-dark mb-2"
@@ -116,7 +121,10 @@ class Dealer extends Component {
         >
           Deal
         </button>
-        {this.state.currCard && <TarotCard card={this.state.currCard} />}
+        <div className="row">
+          {this.state.currCard &&
+            this.state.dealtCards.map((i) => <TarotCard card={i} />)}
+        </div>
       </div>
     );
   }
