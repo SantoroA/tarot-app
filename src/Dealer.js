@@ -114,6 +114,10 @@ class Dealer extends Component {
   render() {
     return (
       <div className="Dealer container">
+        <div className="row">
+          {this.state.currCard &&
+            this.state.dealtCards.map((i) => <TarotCard card={i} />)}
+        </div>
         <button
           type="button"
           className="btn btn-dark mb-2"
@@ -121,10 +125,6 @@ class Dealer extends Component {
         >
           Deal
         </button>
-        <div className="row">
-          {this.state.currCard &&
-            this.state.dealtCards.map((i) => <TarotCard card={i} />)}
-        </div>
       </div>
     );
   }
